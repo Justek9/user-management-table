@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { User } from '../typesAndHelperVariables'
+import { User } from '../utils/typesAndHelperVariables'
 
 interface UserState {
 	users: User[]

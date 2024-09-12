@@ -2,7 +2,8 @@ export type User = {
 	name: string
 	username: string
 	email: string
-	phone: number
+	phone: string
+	[key: string]: any
 }
 
 export const tableHead = {
@@ -10,4 +11,10 @@ export const tableHead = {
 	username: 'Username',
 	email: 'Email',
 	phone: 'Phone',
+}
+
+export const loadingSstates = {
+	loading: 'loading',
+	error: 'error',
+	success: 'success',
 }
