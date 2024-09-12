@@ -1,0 +1,27 @@
+@import '../styles/settings.scss';
+
+.table {
+	font-family: $font-family;
+	border-collapse: collapse;
+	thead {
+		margin-top: 2rem;
+		text-align: left;
+		.head {
+			background-color: $color-black;
+			color: $color-white;
+			th {
+				padding: 1rem;
+				border: 1px solid $color-black;
+				margin: 0;
+			}
+		}
+	}
+	tbody {
+		tr {
+			td {
+				border-bottom: 1px solid $color-black;
+				padding: 1rem;
+			}
+		}
+	}
+}

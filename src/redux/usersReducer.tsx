@@ -1,11 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-
-export type User = {
-	name: string
-	username: string
-	email: string
-	phone: number
-}
+import { User } from '../typesAndHelperVariables'
 
 interface UserState {
 	users: User[]
