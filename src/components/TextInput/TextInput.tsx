@@ -1,4 +1,4 @@
-import { User } from '../../utils/typesAndHelperVariables'
+import styles from './TextInput.module.scss'
 
 type TextInputProps = {
 	name: string
@@ -18,6 +18,7 @@ const TextInput: React.FC<TextInputProps> = ({ name, value, setFilters }) => {
 					return { ...prev, [name]: e.target.value }
 				})
 			}}
+			className={styles.inputField}
 		/>
 	)
 }

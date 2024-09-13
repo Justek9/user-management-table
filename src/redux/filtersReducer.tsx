@@ -18,6 +18,8 @@ const initialState: FiltersState = {
 	},
 }
 
+export const selectFilters = (state: { filters: { filters: any; }; }) => state.filters.filters;
+
 export const FiltersSlice = createSlice({
 	name: 'Filter',
 	initialState,

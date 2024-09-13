@@ -13,7 +13,7 @@ export const tableHead = {
 	phone: 'Phone',
 }
 
-export const loadingSstates = {
+export const loadingStates = {
 	loading: 'loading',
 	error: 'error',
 	success: 'success',

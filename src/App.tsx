@@ -3,33 +3,34 @@ import { useDispatch } from 'react-redux'
 import { addUsers } from './redux/usersReducer'
 import UserTable from './components/UsersTable/UserTable'
 import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner'
-import { loadingSstates } from './utils/typesAndHelperVariables'
+import { loadingStates } from './utils/typesAndHelperVariables'
+import styles from './App.module.scss'
 
 function App() {
-	const [loadingState, setLoadingState] = useState(loadingSstates.loading)
+	const [loadingState, setLoadingState] = useState(loadingStates.loading)
 	const dispatch = useDispatch()
 
 	useEffect(() => {
-		setLoadingState(loadingSstates.loading)
+		setLoadingState(loadingStates.loading)
 		fetch('https://jsonplaceholder.typicode.com/users')
 			.then(response => response.json())
 			.then(data => {
 				dispatch(addUsers({ users: data }))
-				setLoadingState(loadingSstates.success)
+				setLoadingState(loadingStates.success)
 			})
 			.catch(error => {
 				console.log('Error fetching users')
-				setLoadingState(loadingSstates.error)
+				setLoadingState(loadingStates.error)
 			})
 	}, [])
 
 	return (
-		<div>
-			<p>Users table:</p>
-			{loadingState === loadingSstates.loading && <LoadingSpinner />}
-			{loadingState === loadingSstates.success && <UserTable />}
-			{loadingState === loadingSstates.error && <p>Error fetching data....</p>}
-		</div>
+		<section>
+			<h2 className={styles.header}>Users table:</h2>
+			{loadingState === loadingStates.loading && <LoadingSpinner />}
+			{loadingState === loadingStates.success && <UserTable />}
+			{loadingState === loadingStates.error && <p>Error fetching data....</p>}
+		</section>
 	)
 }
 

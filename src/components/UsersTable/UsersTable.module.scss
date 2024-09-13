@@ -3,15 +3,16 @@
 .table {
 	font-family: $font-family;
 	border-collapse: collapse;
+
 	thead {
 		margin-top: 2rem;
 		text-align: left;
 		.head {
-			background-color: $color-black;
+			background-color: $color-primary;
 			color: $color-white;
 			th {
 				padding: 1rem;
-				border: 1px solid $color-black;
+				border: 2px solid $color-primary;
 				margin: 0;
 			}
 		}
@@ -19,9 +20,21 @@
 	tbody {
 		tr {
 			td {
-				border-bottom: 1px solid $color-black;
+				border-bottom: 1px solid $color-primary;
 				padding: 1rem;
 			}
 		}
+	}
+}
+
+.clearFiltersBtn {
+	background: none;
+	color: $color-accent;
+	border: none;
+	margin-bottom: 0.5rem;
+
+	&:hover {
+		text-decoration: underline;
+		cursor: pointer;
 	}
 }
